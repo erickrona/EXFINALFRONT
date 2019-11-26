@@ -73,10 +73,10 @@ input.addEventListener('keypress', function (event) {
       success: function(data){
         console.log(data)
         // agregar código aqui para poner los datos del todolist en el el html
-      let newElement = document.createElement("li");
-      newElement.classList.add("todo");
-      newElement.textContent = input.value;
-      $("#todo-list").append(newElement);
+        let newElement = document.createElement("li");
+        newElement.classList.add("todo");
+        newElement.textContent = data.description;
+        $("#todo-list").append(newElement);
       },
       error: function(error_msg) {
         alert((error_msg['responseText']));
